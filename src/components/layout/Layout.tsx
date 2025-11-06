@@ -3,11 +3,13 @@ import type {PropsWithChildren} from 'react';
 
 import RigthSidebar from "./rigth-sidebar/rigth-sidebar.tsx";
 import {LeftSidebar} from "./left-sidebar/left-sidebar.tsx";
+import { AudioPlayer } from '../elements/player/AudioPlayer.tsx';
 
 export default function Layout({children}: PropsWithChildren<PropsWithChildren>) {
 
-    return(
-        <div className='min-h-screen h-full grid  grid-cols-[1fr_4fr_1.2fr]'>
+    return (
+     <div className=''>
+           <div className='min-h-screen h-full grid  grid-cols-[1fr_4fr_1.2fr]'>
 
 <LeftSidebar/>
 
@@ -18,6 +20,11 @@ export default function Layout({children}: PropsWithChildren<PropsWithChildren>)
 
 
    <RigthSidebar/>
+   </div>
+
+
+   <AudioPlayer/>
+   
     </div>
 
     )

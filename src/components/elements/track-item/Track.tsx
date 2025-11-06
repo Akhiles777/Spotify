@@ -6,6 +6,7 @@ import TrackInfo from '../../ui/track-info/TrackInfo'
 
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
+import { transformDuration } from '@/utils/transform-duration'
 
 // activate utc plugin so dayjs.unix(...).utc() works and utc is actually used
 dayjs.extend(utc)
@@ -23,15 +24,15 @@ export function Track ({track}:Props) {
 
       {/*Track info*/}
 
-<TrackInfo title={track.name} subTitle={dayjs.unix(track.duration).utc().format('m:ss')}/>
+<TrackInfo title={track.name} subTitle={transformDuration(track.duration)}/>
 
     <div>
 
   <button>
-    <Heart className='text-(--color-primary) hover:opacity-100 opacity-85 duration-300'/>
+    <Heart className='text-(--color-primary) hover:opacity-100 opacity-85 hover:fill-(--color-primary) duration-1000 '/>
   </button>
 
-  <button>
+  <button>          
         <Ellipsis className='opacity-30 duration-300 hover:opacity-100' />
   </button>
 

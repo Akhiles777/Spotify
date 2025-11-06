@@ -3,6 +3,8 @@ import {SearchField} from "./components/elements/search-field/SearchField.tsx";
 import {Play} from "lucide-react";
 import { Track } from './components/elements/track-item/Track.tsx';
 
+import { AudioPlayer } from './components/elements/player/AudioPlayer.tsx';
+
 import { TRACKS } from './data/tracks.data.ts';
 
 function App() {
@@ -16,20 +18,27 @@ function App() {
             <h1 className='text-4xl font-semibold mb-[0.18rem] text-white'>
               Daft Punk
             </h1>
-            <h2 className='text-[color:var(--color-primary)] font-medium'>
+            <h2 className='text-(--color-primary) font-medium'>
               6.8m listeners
             </h2>
           </div>
-          <button className='rounded-full bg-gradient-to-r from-[#2F3034] to-[#1f2026] p-4.5 border-[var(--color-player-bg)] cursor-pointer border-solid duration-300 hover:translate-y-[-2px] hover:shadow'>
-            <Play className='text-[color:var(--color-primary)]  ' fill='var(--color-primary)' size={21}/>
+          <button className='rounded-full bg-linear-to-r from-[#2F3034] to-[#1f2026] p-4.5 border-(--color-player-bg) cursor-pointer border-solid duration-300 hover:-translate-y-0.5 hover:shadow'>
+            <Play className='text-(--color-primary)' fill='var(--color-primary)' size={21}/>
           </button>
         </div>
       </div>
 
 
+
+
       <div className="">
         {TRACKS.map(track => <Track key={track.name} track={track} />)}
       </div>
+
+
+
+      
+
     </div>
   );
 }

@@ -1,5 +1,7 @@
+@import "tailwindcss";
+
 :root {
-  font-family: 'Poppins', sans-serif;
+font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
 /*  font-weight: 400;*/
 
@@ -9,18 +11,14 @@
 
   --color-primary: #ffbf1d;
 
-  --color-secondary: #f98305;
+  --color-secondary: #cb6b04;
   --color-bg: #222327;
   --color-bg-secondary: #25262c;
-  --color-player-bg: #2f3034;
+  --color-player-bg: #27282b;;
   --text-xxs: 0.100rem;
-  
-
-
-
   --spacing-layout: 1.5rem;
 
-  font-synthesis: none;
+  font-synthesis: none; 
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,7 +32,23 @@ body {
 }
 
 
+input[type="range"] {
+  @apply w-full h-2  pointer-events-auto    cursor-pointer opacity-0  appearance-none mb-10;
 
+appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb
+
+input[type="range"]::-moz-range-thumb
+input[type="range"]::-ms-thumb{
+  appearance: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  cursor: pointer;
+}
 
 /*
 :root {
