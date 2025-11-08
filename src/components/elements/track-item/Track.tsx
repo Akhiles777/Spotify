@@ -28,7 +28,7 @@ export function Track ({track}:Props) {
 
     <div>
 
-  <button>
+  <button className='mr-5'>
     <Heart className='text-(--color-primary) hover:opacity-100 opacity-85 hover:fill-(--color-primary) duration-1000 '/>
   </button>
 

@@ -3,7 +3,7 @@ import {SearchField} from "./components/elements/search-field/SearchField.tsx";
 import {Play} from "lucide-react";
 import { Track } from './components/elements/track-item/Track.tsx';
 
-import { AudioPlayer } from './components/elements/player/AudioPlayer.tsx';
+
 
 import { TRACKS } from './data/tracks.data.ts';
 

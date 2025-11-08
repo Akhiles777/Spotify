@@ -6,7 +6,7 @@ class MusicPlayerStore {
 
     isPlaying:boolean = false;
     currentTrack: ITrack | null = TRACKS[0];
-    volume: number = 50;
+    volume: number = 85;
     currentTime: number = 0;
     progress: number = 0;
 
@@ -14,19 +14,28 @@ class MusicPlayerStore {
         makeAutoObservable(this);
     }
 
-    play(track: ITrack){
-      this.currentTrack = track;
-      this.isPlaying = true;
-      console.log(`Playing track:${track.name}`);
-  }
+
+    setTrack(track: ITrack | null ){
+        this.currentTrack = track;
+    }
+ 
+    togglePlayPause(){
+        this.isPlaying = !this.isPlaying;
+    }
+
 
 
   seek(time: number){
-
     this.currentTime = time;
     this.progress = (time / (this.currentTrack?.duration || 1)) * 100;
 }
+
+
+setVolume(volume: number){
+    this.volume = volume;
+
+}
 }
 
 
-export const musicPlayerStore = new MusicPlayerStore();
+export const  playerStore = new MusicPlayerStore();
