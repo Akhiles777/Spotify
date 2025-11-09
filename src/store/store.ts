@@ -14,7 +14,7 @@ class MusicPlayerStore {
         makeAutoObservable(this);
     }
 
-
+    
     setTrack(track: ITrack | null ){
         this.currentTrack = track;
     }
@@ -33,6 +33,22 @@ class MusicPlayerStore {
 
 setVolume(volume: number){
     this.volume = volume;
+
+}
+
+
+changeTrack(type: 'prev' | 'next'){
+    // Logic to go to the next track
+
+    if(!this.currentTrack) return;
+
+         const currentIndex = TRACKS.findIndex(track => track.name === this.currentTrack?.name);
+
+    
+        const nextIndex =  type === 'next' ? (currentIndex + 1) % TRACKS.length : (currentIndex - 1 + TRACKS.length) % TRACKS.length;
+        this.setTrack(TRACKS[nextIndex]);
+   this.currentTime = 0;
+        this.progress = 0;
 
 }
 }
