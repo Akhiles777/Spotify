@@ -17,6 +17,7 @@ export function useAudioPlayer() {
         }
     }
     
+
 const onSeek = (time: number) => {
     if (!audioref.current) return;
     audioref.current.currentTime = time;
@@ -28,8 +29,9 @@ const changeTrack = (type: 'prev' | 'next') => {
     playerStore.changeTrack(type);
      if(audioref.current && playerStore.isPlaying   ) {
         audioref.current.play();
-        playerStore.isPlaying = true;
+        playerStore.isPlaying = false;
      }
+
     }
 
 

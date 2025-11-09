@@ -1,3 +1,4 @@
+
 import {makeAutoObservable} from "mobx";
 import type { ITrack } from "../types/track.types";
 import { TRACKS } from "@/data/tracks.data";
@@ -6,7 +7,7 @@ class MusicPlayerStore {
 
     isPlaying:boolean = false;
     currentTrack: ITrack | null = TRACKS[0];
-    volume: number = 85;
+    volume: number = 100;
     currentTime: number = 0;
     progress: number = 0;
 
@@ -33,7 +34,6 @@ class MusicPlayerStore {
 
 setVolume(volume: number){
     this.volume = volume;
-
 }
 
 

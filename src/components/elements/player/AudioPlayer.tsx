@@ -1,30 +1,20 @@
+import { observer } from "mobx-react-lite";
 import TrackInfo from "../../ui/track-info/TrackInfo";
-
-import  {playerStore} from "@/store/store";
-
-
+import { playerStore } from "@/store/store";
 import { useAudioPlayer } from "./useAudioPlayer";
-import { SkipBack, Volume, Volume1, Volume2,Pause,Play, SkipForward   } from "lucide-react";
-
-
-
+import { SkipBack, Volume, Volume1, Volume2, Pause, Play, SkipForward } from "lucide-react";
 import { ProgressBar } from "@/components/ui/progress/ProgressBar";
 
 
-
-
-
-
-export function AudioPlayer () {
+export const AudioPlayer = observer(() => {
 
 
   const {audioref, togglePlayPause,onSeek, setVolume,changeTrack} = useAudioPlayer();
 
   if(!playerStore.currentTrack){
+
     return null
   }
-
-
 
 
     return (
@@ -67,9 +57,6 @@ export function AudioPlayer () {
     </button>
   </div>
 
-
-
-
 {/* Progress Bar */}
 
 
@@ -99,5 +86,5 @@ isThumbDisplayed = {false}
 
 </div>
     </div>
-    )
-}
+    );
+});
