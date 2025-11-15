@@ -25,7 +25,6 @@ const onSeek = (time: number) => {
 }
 
 const changeTrack = (type: 'prev' | 'next') => {
-
     playerStore.changeTrack(type);
      if(audioref.current && playerStore.isPlaying   ) {
         audioref.current.play();

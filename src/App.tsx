@@ -1,7 +1,7 @@
 import './App.css'
 import {SearchField} from "./components/elements/search-field/SearchField.tsx";
 import {Play} from "lucide-react";
-import { Track } from './components/elements/track-item/Track.tsx';
+import Track from "./components/elements/track-item/Track.tsx";
 
 
 
@@ -19,6 +19,9 @@ function App() {
               Daft Punk
             </h1>
             <h2 className='text-(--color-primary) font-medium'>
+
+
+              
               6.8m listeners
             </h2>
           </div>

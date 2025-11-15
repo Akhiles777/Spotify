@@ -19,12 +19,14 @@
     "mobx": "^6.15.0",
     "mobx-react-observer": "^1.1.0",
     "react": "^19.1.1",
+    "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.1.1",
     "reference": "^0.1.1",
     "sass": "^1.93.2",
     "tailwind": "^4.0.0",
     "tailwindcss": "^4.1.16",
-    "utc": "^0.1.0"
+    "utc": "^0.1.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

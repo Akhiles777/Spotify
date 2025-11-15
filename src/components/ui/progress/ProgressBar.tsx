@@ -25,16 +25,15 @@ export function ProgressBar ({currentValue, value, progress, onSeek, isTextDispa
 
 
 
-{isThumbDisplayed && <div className="w-3.5 h-3.5 bg-secondary rounded-full absolute top-1/2 -translate-y-1/2 -translate-x-1/2" style={{left: `${progress}`}}/>}
+{isThumbDisplayed && <div className="w-5.5 h-3.5 bg-secondary rounded-full absolute top-1/2 -translate-y-1/2 -translate-x-1/2" style={{left: '50'}}/>}
 {/* Thumb  */}
 
 
-    <input value={currentValue} onChange={e => onSeek(+e.target.value)}  min={0} max={value} type="range" />
-
+    <input  value={currentValue} onChange={e => onSeek(+e.target.value)}  min={0} max={value} type="range" />
   </div>  
 
 { isTextDispalayed && (
-  <span className="text-white/50">{transformDuration(value)}</span>)}
+      <span className="text-white/50">{transformDuration(value)}</span>)}
 </div>
     )
 }

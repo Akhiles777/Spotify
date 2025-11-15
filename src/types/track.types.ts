@@ -4,6 +4,5 @@ export interface  ITrack {
     name: string;
     file: string;
     artists: IArtist;
-    duration: number;
-
+    duration: number
 }

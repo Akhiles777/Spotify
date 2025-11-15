@@ -20,11 +20,13 @@ export const AudioPlayer = observer(() => {
     return (
     <div className='w-full  bg-(--color-player-bg)  py-5 px-10 grid grid-cols-[1fr_5.8fr]    border-t border-white/10  bottom-0 left-0 '>
         
-      <TrackInfo title={playerStore.currentTrack?.name || ''} subTitle={playerStore.currentTrack?.artists.name|| ''} image={undefined}/>
+      <TrackInfo   title={playerStore.currentTrack?.name || ''} subTitle={playerStore.currentTrack?.artists.name|| ''} image={undefined}/>
+
       <audio 
         ref={audioref} 
         src={playerStore.currentTrack.file}
         onTimeUpdate={(e: React.SyntheticEvent<HTMLAudioElement>) => {
+
 
   
           const currentTime =  Math.floor(e.currentTarget.currentTime);

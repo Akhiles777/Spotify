@@ -10,12 +10,12 @@ class MusicPlayerStore {
     volume: number = 100;
     currentTime: number = 0;
     progress: number = 0;
+    trackNasheed: ITrack | null = null;
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    
     setTrack(track: ITrack | null ){
         this.currentTrack = track;
     }
@@ -25,6 +25,15 @@ class MusicPlayerStore {
     }
 
 
+    isPlayingTrack(track: ITrack){
+        this.currentTrack?.name === track?.name;
+        this.trackNasheed = track;  
+return this.trackNasheed;
+    }
+
+
+
+    
 
   seek(time: number){
     this.currentTime = time;
@@ -34,6 +43,7 @@ class MusicPlayerStore {
 
 setVolume(volume: number){
     this.volume = volume;
+
 }
 
 

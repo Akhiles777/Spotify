@@ -8,6 +8,7 @@ import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { transformDuration } from '@/utils/transform-duration'
 
+
 // activate utc plugin so dayjs.unix(...).utc() works and utc is actually used
 dayjs.extend(utc)
 
@@ -16,24 +17,25 @@ track: ITrack
 }
 
 
-export function Track ({track}:Props) {
+export  default function  Track ({track} :Props)  {
 
     return ( 
 
     <div className='border-b border-white/10 py-7 flex justify-between items-center last:border-0'>
+      
 
       {/*Track info*/}
 
-<TrackInfo title={track.name} subTitle={transformDuration(track.duration)}/>
+<TrackInfo track={track} title={track.name} subTitle={transformDuration(track.duration)}/>
 
     <div>
 
-  <button className='mr-5'>
+  <button className='mr-8'>
     <Heart className='text-(--color-primary) hover:opacity-100 opacity-85 hover:fill-(--color-primary) duration-1000 '/>
   </button>
 
   <button>          
-        <Ellipsis className='opacity-30 duration-300 hover:opacity-100' />
+        <Ellipsis className='mr-4 opacity-30 duration-300 hover:opacity-100' />
   </button>
 
     </div>
