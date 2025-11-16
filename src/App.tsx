@@ -25,8 +25,9 @@ function App() {
               6.8m listeners
             </h2>
           </div>
-          <button className='rounded-full bg-linear-to-r from-[#2F3034] to-[#1f2026] p-4.5 border-(--color-player-bg) cursor-pointer border-solid duration-300 hover:-translate-y-0.5 hover:shadow'>
-            <Play className='text-(--color-primary)' fill='var(--color-primary)' size={21}/>
+
+          <button className='mr-15 rounded-full bg-linear-to-r from-[#2F3034] to-[#1f2026] p-4.5 border-(--color-player-bg) cursor-pointer border-solid duration-300 hover:-translate-y-0.5 hover:shadow'>
+            <Play className=' text-(--color-primary)' fill='var(--color-primary)' size={21}/>
           </button>
         </div>
       </div>
