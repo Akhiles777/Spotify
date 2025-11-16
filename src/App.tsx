@@ -6,11 +6,24 @@ import Track from "./components/elements/track-item/Track.tsx";
 
 
 import { TRACKS } from './data/tracks.data.ts';
+import { useQueryState } from 'nuqs';
+import { useMemo } from 'react';
 
 function App() {
+
+const [searchTerm, setSearchTerm] = useQueryState('q')
+
+
+const filteredTracks = useMemo(()=> {
+  if(!searchTerm) return TRACKS
+
+return TRACKS.filter(track => track.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()))
+
+}, [searchTerm])
+
   return (
     <div className=''>
-      <SearchField/>
+      <SearchField value={searchTerm || ''} onChange={e => setSearchTerm(e.target.value)}/>
       <div className='relative'>
         <img className='rounded-xl w-230 h-130' src={'/bunner.png'} alt={''}/>
         <div className='flex items-center justify-between   absolute bottom-6 left-0  w-full px-6'>
@@ -20,7 +33,7 @@ function App() {
             </h1>
             <h2 className='text-(--color-primary) font-medium'>
 
-
+USEDEBOUNCE ДОБАВИТЬ для работы с БД
               
               6.8m listeners
             </h2>
@@ -36,7 +49,7 @@ function App() {
 
 
       <div className="">
-        {TRACKS.map(track => <Track key={track.name} track={track} />)}
+        {filteredTracks.map(track => <Track key={track.name} track={track} />)}
       </div>
 
 

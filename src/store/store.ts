@@ -25,6 +25,15 @@ class MusicPlayerStore {
     }
 
 
+    play(){
+        this.isPlaying = true
+    }
+
+    pause(){
+        this.isPlaying = false
+    }
+
+
     isPlayingTrack(track: ITrack){
         this.currentTrack?.name === track?.name;
         this.trackNasheed = track;  

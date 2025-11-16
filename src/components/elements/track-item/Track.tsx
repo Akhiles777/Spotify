@@ -7,6 +7,7 @@ import TrackInfo from '../../ui/track-info/TrackInfo'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import { transformDuration } from '@/utils/transform-duration'
+import { favoriteStore } from '@/store/favorite-store'
 
 
 // activate utc plugin so dayjs.unix(...).utc() works and utc is actually used
@@ -30,8 +31,10 @@ export  default function  Track ({track} :Props)  {
 
     <div>
 
-  <button className='mr-8'>
-    <Heart className='text-(--color-primary) hover:opacity-100 opacity-85 hover:fill-(--color-primary) duration-1000 '/>
+  <button onClick={() => {
+    favoriteStore.toggleFavorite(track.name)
+  }} className='mr-8'>
+    <Heart className='text-(--color-primary) hover:opacity-100 opacity-85 hover:fill-(--color-primary) duration-1000 ' fill={favoriteStore.favoritesName.includes(track.name)? 'var(--color-primary)' : 'none'}/>
   </button>
 
   <button>          

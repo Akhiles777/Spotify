@@ -1,8 +1,8 @@
 import { playerStore } from "@/store/store"
 import type { ITrack } from "@/types/track.types"
 
-import { CircularProgressbar } from 'react-circular-progressbar'
-import 'react-circular-progressbar/dist/styles.css'
+import { CircularProgressbar } from "react-circular-progressbar"
+import "react-circular-progressbar/dist/styles.css"
 
 import { observer } from "mobx-react-lite"
 import { Pause, Play } from "lucide-react"
@@ -17,73 +17,73 @@ interface Props {
 export const TrackInfo = observer(({ track, subTitle, title, image }: Props) => {
   const isActive = playerStore.currentTrack?.name === track?.name
 
+  const handleClick = () => {
+    if (!isActive && track) {
+      playerStore.setTrack(track)
+    }
+    playerStore.togglePlayPause()
+  }
+
   return (
-    <div className='flex items-center gap-3'>
-      <div>
-        {track ? (
-          <button className="block relative group" onClick={() => {
-            if(!isActive){
-            playerStore.setTrack(track)
-          }
-          playerStore.togglePlayPause()
-          }}>
-            {isActive && (
-              <div className="w-12 h-12">
-                <CircularProgressbar
-                  className="absolute"
-                  styles={{
-                    trail: { stroke: '#2E3235' },
-                    path: { stroke: 'var(--color-primary)', transition: 'stroke-dashoffset' }
-                  }}
-                  strokeWidth={7}
-                  value={playerStore.progress}
-                />
-                   
-            
-                    </div>
-            
-            )}
-
-
- <button className="absolute inset-0 flex items-center
-  justify-center group-hover:opacity-100 
- opacity-0 duration-300 text-primary"
-
- 
- >
-  {!isActive ? (<Play/>): playerStore.isPlaying ? (<Pause/>): (<Play/>)}
- 
- </button>
-
-
-     {isActive ? (
-       <img
-                src={image || "/preview.jpg"}
-                className="w-12 h-12 rounded-full m-1.5"
-                alt={title}
+    <div className="flex items-center gap-3">
+      {track ? (
+        <button
+          className="relative w-12 h-12 group"
+          onClick={handleClick}
+        >
+          {/* Progressbar */}
+          {isActive && (
+            <div className="absolute inset-0">
+              <CircularProgressbar
+                className="absolute"
+                styles={{
+                  trail: { stroke: "#2E3235" },
+                  path: {
+                    stroke: "var(--color-primary)",
+                    transition: "stroke-dashoffset",
+                  },
+                }}
+                strokeWidth={5}
+                value={playerStore.progress}
               />
-            ) : (
-            <img
-                src="/preview.jpg"
-                className="w-12 h-12  rounded-full m-1.5"
-                alt="preview"
-              />
-            )}
-          </button>
-        
+            </div>
+          )}
 
-        ):   (
-          <img
-            src="/preview.jpg"
-            className="w-12 h-12 rounded-full m-1.5"
-            alt="preview"
+          {/* Play/Pause Overlay */}
+          <div
+            className="
+              absolute inset-0 flex items-center justify-center
+              group-hover:opacity-100 opacity-0
+              duration-300 text-primary
+              z-20
+            "
+          >
+            {!isActive ? <Play /> : playerStore.isPlaying ? <Pause /> : <Play />}
+          </div>
+
+     
+
+         <img
+            src={image || "/preview.jpg"}
+            className="w-12 h-12 rounded-full  relative z-10"
+            alt={title}
           />
-        )} 
-      </div>
+
+
+
+
+        </button>
+      ) : ( 
+        <img
+          src="/preview.jpg"
+          className="w-12 h-12 rounded-full "
+          alt="preview"
+        />
+      )}
 
       <div>
-        <div className='text-white text-lg font-medium'>{title}</div>
-        <div className='opacity-65'>{subTitle}</div>
+        <div className="text-white text-lg font-medium">{} {title}</div>
+        <div className="opacity-65">{subTitle}</div>
       </div>
     </div>
   )
