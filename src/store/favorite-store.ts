@@ -5,7 +5,7 @@ import { makeAutoObservable } from "mobx"
 
 class FavoriteStore{
 
-    favoritesName: string[] = JSON.parse(localStorage.getItem('favorite') || '[]')
+    favoritesName: string[] = JSON.parse(localStorage.getItem('favorites') || '[]')
 
 
 constructor(){
@@ -14,14 +14,20 @@ constructor(){
 
 
 toggleFavorite(trackName: string){
+
     if(this.favoritesName.includes(trackName)){
-        this.favoritesName = this.favoritesName.filter(name => name = trackName)
+        this.favoritesName = this.favoritesName.filter(name => name !== trackName)
     }else{
+
         this.favoritesName.push(trackName)
+
     }
 
-
+    
     localStorage.setItem('favorites', JSON.stringify(this.favoritesName))
+
+
+    console.log(trackName)
 }
 
 }

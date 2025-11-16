@@ -35,13 +35,15 @@ const Track = observer(({ track }: Props) => {
           className='mr-8'
         >
           <Heart
-            className='text-(--color-primary) hover:opacity-100 opacity-85 hover:fill-(--color-primary) duration-300'
+            className='text-(--color-primary) hover:opacity-100 opacity-85 duration-300'
             fill={
-              favoriteStore.favoritesName.includes(track.name)
+                 favoriteStore.favoritesName.includes(track.name)
                 ? 'var(--color-primary)'
-                : ''
+                : 'none'
             }
           />
+
+
         </button>
 
         <button>

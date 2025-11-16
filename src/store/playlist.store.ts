@@ -17,7 +17,7 @@ class PlaylistStore{
 
 
     createPlaylist(name:string){
-        if(this.playlist.find(playlist => playlist.name === name)) return
+        if(this.playlist.find(playlist => playlist.name !== name)) return
         this.playlist.push({name, tracks: []})
         this.saveLocalStorage()
     }

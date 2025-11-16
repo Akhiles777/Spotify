@@ -3,8 +3,6 @@ import {SearchField} from "./components/elements/search-field/SearchField.tsx";
 import {Play} from "lucide-react";
 import Track from "./components/elements/track-item/Track.tsx";
 
-
-
 import { TRACKS } from './data/tracks.data.ts';
 import { useQueryState } from 'nuqs';
 import { useMemo } from 'react';
@@ -13,13 +11,14 @@ function App() {
 
 const [searchTerm, setSearchTerm] = useQueryState('q')
 
-
 const filteredTracks = useMemo(()=> {
   if(!searchTerm) return TRACKS
 
-return TRACKS.filter(track => track.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()))
+return TRACKS.filter(track => track.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
 }, [searchTerm])
+
+
 
   return (
     <div className=''>
