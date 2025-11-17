@@ -17,10 +17,15 @@ class PlaylistStore{
 
 
     createPlaylist(name:string){
-        if(this.playlist.find(playlist => playlist.name !== name)) return
+        if(this.playlist.find(playlist => playlist.name === name)) return
         this.playlist.push({name, tracks: []})
+
+        console.log(this.playlist)
         this.saveLocalStorage()
     }
+
+
+
 
 
 
@@ -30,6 +35,7 @@ class PlaylistStore{
         if(!playlist || playlist.tracks.includes(trackName)) return
 
         playlist.tracks.push(trackName)
+               console.log(this.playlist)
         this.saveLocalStorage()
     }
 

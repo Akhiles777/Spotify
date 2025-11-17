@@ -3,7 +3,7 @@ import type {LucideIcon} from 'lucide-react'
 */
 
 export interface IMenuItem{
-    icon: string,
+    icon?: string,
     name: string,
     link: string
 }

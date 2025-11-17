@@ -6,7 +6,7 @@ import { TRACKS } from "@/data/tracks.data";
 class MusicPlayerStore {
 
     isPlaying:boolean = false;
-    currentTrack: ITrack | null = TRACKS[0];
+    currentTrack: ITrack | null = TRACKS[2];
     volume: number = 100;
     currentTime: number = 0;
     progress: number = 0;
@@ -20,6 +20,7 @@ class MusicPlayerStore {
         this.currentTrack = track;
     }
  
+    
     togglePlayPause(){
         this.isPlaying = !this.isPlaying;
     }

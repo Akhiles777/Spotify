@@ -33,9 +33,9 @@ export const LIBRARY_MENU_ITEMS = [
     {name: 'Recently Played', link: PagesConfig.RECENTLY_PLAYED,icon: ''},
     {name: 'Liked Songs', link: PagesConfig.LIKED_SONGS,icon: ''},
 
-    {name: 'Playlist', link: PagesConfig.PLAYLIST('https://google.com'), icon:''},
-    {name: 'Albums', link: PagesConfig.ALBUMS(''), icon:''},
-    {name: 'Artists', link: PagesConfig.ARTIST(''), icon: ''},
+    {name: 'Playlist', link: PagesConfig.PLAYLIST('https://google.com'),icon: '' },
+    {name: 'Albums', link: PagesConfig.ALBUMS('') ,icon: ''},
+    {name: 'Artists', link: PagesConfig.ARTIST(''),icon: ''},
     {name: 'Podcast', link: PagesConfig.PODCASTS(''),icon: ''}
 
 ]
