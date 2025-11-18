@@ -29,16 +29,32 @@ class PlaylistStore{
 
 
 
-    addToPlaylist(playlistName: string, trackName: string){
-        const playlist = this.playlist.find(p => p.name === playlistName)
 
-        if(!playlist || playlist.tracks.includes(trackName)) return
+    toggleTrackInPlaylist(playlistName: string, trackName: string){
+          const playlist = this.playlist.find(p => p.name === playlistName)
 
-        playlist.tracks.push(trackName)
-               console.log(this.playlist)
+        if(!playlist) return
+
+if(playlist.tracks.includes(trackName)){
+        playlist.tracks = playlist.tracks.filter(name => name !== trackName)
+}
+else{
+    playlist.tracks.push(trackName)
+}
         this.saveLocalStorage()
     }
+  
 
+
+isTrackInPlaylist(playlistName: string, trackName: string){
+    const playlist = this.playlist.find(p => p.name === playlistName)
+if(!playlist) return false
+
+return playlist.tracks.includes(trackName)
+    
+
+
+}
 
 
 }

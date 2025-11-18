@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.16",
+    "classnames": "^2.5.1",
+    "cn": "^0.1.1",
     "dayjs": "^1.11.19",
     "dayjs-plugin-utc": "^0.1.2",
     "lodash": "^4.17.21",
