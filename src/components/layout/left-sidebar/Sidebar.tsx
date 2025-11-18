@@ -34,6 +34,9 @@ const [isShow, setIsShow] = useState(false)
 
 {isShow ? <X/> : <Plus/>}<span>New playlist</span>
 
+
+
+
     </button>
 
 {isShow && (
@@ -47,9 +50,10 @@ const [isShow, setIsShow] = useState(false)
       border-transparent
      transition-colors duration-300 rounded-xl
       focus:border-primary px-3 py-1.5 "
-
       />
 
+
+      
 
 
 

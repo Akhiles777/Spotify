@@ -15,8 +15,6 @@ import { useState } from "react";
 import type { ITrack } from "@/types/track.types";
 
 
-
-
 interface Props{
     track: ITrack
 }
@@ -32,14 +30,15 @@ const [isShow, setIsShow] = useState(false)
     return(
 
 <div>
-        <button onClick={() => {
-    setIsShow(prev => !prev)
-    console.log(isShow)}}>
-        <Ellipsis className="opacity-30 duration-300 hover:opacity-100"/>
-      
+       
+       <button onClick={() => {
+       setIsShow(prev => !prev)
+       }}>
+        sdsgs
+       </button>
 
 
-    </button>
+
 
 {isShow && (
 
@@ -70,7 +69,6 @@ const [isShow, setIsShow] = useState(false)
 })}
 
 
-<hr className="my-2 border-white/20"/>
 
 
 </CustomMenu>

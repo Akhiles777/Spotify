@@ -24,6 +24,7 @@ return <aside className='border-red-500 pl-4 py-5 text-center '>
 
  
  <SidebarPlaylist/>
+
 </aside>
 
 }

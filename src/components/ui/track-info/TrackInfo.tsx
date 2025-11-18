@@ -25,7 +25,9 @@ export const TrackInfo = observer(({ track, subTitle, title, image }: Props) => 
   }
 
   return (
-    <div className="flex items-center gap-3">
+
+
+    <div className="flex items-center gap-3 ">
       {track ? (
         <button
           className="relative w-12 h-12 group"
@@ -53,12 +55,12 @@ export const TrackInfo = observer(({ track, subTitle, title, image }: Props) => 
           <div
             className="
               absolute inset-0 flex items-center justify-center
-              group-hover:opacity-100 opacity-0
+          
               duration-300 text-primary
               z-20
             "
           >
-            {!isActive ? <Play /> : playerStore.isPlaying ? <Pause /> : <Play />}
+            {!isActive ? <Play className="opacity-0 hover:opacity-100 duration-300" /> : playerStore.isPlaying ? <Pause /> : <Play className="opacity-0 hover:opacity-100 duration-300" />}
           </div>
 
      

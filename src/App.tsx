@@ -22,7 +22,10 @@ return TRACKS.filter(track => track.name.toLowerCase().includes(searchTerm.toLow
 
   return (
     <div className=''>
-      <SearchField value={searchTerm || ''} onChange={e => setSearchTerm(e.target.value)}/>
+<SearchField searchTerm={searchTerm ?? ''} onChange={(e) => setSearchTerm(e.target.value)} />
+
+
+
       <div className='relative'>
         <img className='rounded-xl w-230 h-130' src={'/bunner.png'} alt={''}/>
         <div className='flex items-center justify-between   absolute bottom-6 left-0  w-full px-6'>

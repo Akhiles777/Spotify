@@ -1,27 +1,37 @@
-import {Search} from 'lucide-react'
+import { useState, useEffect } from "react"
 
-import type { ChangeEvent } from 'react'
+import { useDebounce } from "@/hooks/useDebounce"
+
+import type { ChangeEvent } from "react";
 
 
-interface Props {
-    value: string
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+import { Search } from "lucide-react";
+
+interface Props{
+    searchTerm: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
+export function SearchField({searchTerm, onChange }: Props) {
 
-export function SearchField({value, onChange}: Props) {
-    return (
-        <div>
-            <label className='flex items-center gap-3 group'>
-            <Search className='opacity-30 group-focus-within:opacity-100 duration-150'/>
-            <input
-            value={value}
-            onChange={onChange}
-                type='search'
-                placeholder='Search for songs, artists, etc...'
-              className='bg-transparent w-200 outline-none'
-            />
-            </label>
-        </div>
-    )
+  const debouncedValueText = useDebounce(searchTerm, 500)
+
+  useEffect(() => {
+    console.log("Запрос отправлен:", debouncedValueText)
+  }, [debouncedValueText])
+
+  return (
+    <div>
+      <label className='flex items-center gap-3 group'>
+        <Search className='opacity-30 group-focus-within:opacity-100 duration-150'/>
+        <input
+          value={searchTerm}
+          onChange={onChange}
+          type='search'
+          placeholder='Search for songs, artists, etc...'
+          className='bg-transparent w-200 outline-none'
+        />
+      </label>
+    </div>
+  )
 }

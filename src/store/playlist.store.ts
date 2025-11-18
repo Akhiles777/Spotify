@@ -19,7 +19,6 @@ class PlaylistStore{
     createPlaylist(name:string){
         if(this.playlist.find(playlist => playlist.name === name)) return
         this.playlist.push({name, tracks: []})
-
         console.log(this.playlist)
         this.saveLocalStorage()
     }
@@ -30,21 +29,23 @@ class PlaylistStore{
 
 
 
-    toggleTrackInPlaylist(playlistName: string, trackName: string){
+toggleTrackInPlaylist(playlistName: string, trackName: string){
           const playlist = this.playlist.find(p => p.name === playlistName)
 
-        if(!playlist) return
+      if(!playlist) return
+
 
 if(playlist.tracks.includes(trackName)){
         playlist.tracks = playlist.tracks.filter(name => name !== trackName)
+
+
 }
 else{
     playlist.tracks.push(trackName)
 }
         this.saveLocalStorage()
     }
-  
-
+    
 
 isTrackInPlaylist(playlistName: string, trackName: string){
     const playlist = this.playlist.find(p => p.name === playlistName)
