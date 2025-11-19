@@ -7,7 +7,19 @@ export function useAudioPlayer() {
       useEffect(() => {
         if(!audioref.current) return
 
-        if(playerStore.isPlaying){
+        if(playerStore.currentTime !== undefined){
+
+
+        audioref.current.onended = () => {
+            playerStore.changeTrack('next');
+            if (audioref.current) {
+                audioref.current.play();
+            }
+        };
+
+
+        playerStore.isPlaying === true
+
             audioref.current.play()
         }
 

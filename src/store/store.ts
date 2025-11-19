@@ -25,6 +25,13 @@ class MusicPlayerStore {
         this.isPlaying = !this.isPlaying;
     }
 
+    returnTrack(){
+                this.isPlaying = false
+                this.progress = 0;
+                this.currentTime = 0;
+                this.trackNasheed = null;
+    }
+
 
     play(){
         this.isPlaying = true
@@ -47,7 +54,7 @@ return this.trackNasheed;
 
   seek(time: number){
     this.currentTime = time;
-    this.progress = (time / (this.currentTrack?.duration || 1)) * 100;
+     this.progress = (time / (this.currentTrack?.duration || 1)) * 100;
 }
 
 
@@ -58,7 +65,6 @@ setVolume(volume: number){
 
 
 changeTrack(type: 'prev' | 'next'){
-    // Logic to go to the next track
 
     if(!this.currentTrack) return;
 
