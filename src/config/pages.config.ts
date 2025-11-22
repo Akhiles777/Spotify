@@ -11,7 +11,7 @@
 
 
     static PLAYLIST(id: string){
-        return 'playlist' + (id ? `/${id}` : '')
+        return 'Playlist' + (id ? `/${id}` : '')
     }
 
     static ALBUMS(id: string){

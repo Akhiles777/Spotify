@@ -24,6 +24,7 @@
     "react": "^19.1.1",
     "react-circular-progressbar": "^2.2.0",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.6",
     "reference": "^0.1.1",
     "sass": "^1.93.2",
     "tailwind": "^4.0.0",

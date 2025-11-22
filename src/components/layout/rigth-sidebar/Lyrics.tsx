@@ -1,36 +1,45 @@
 import styles from './Lyrics.module.scss'
 
-import {Play} from 'lucide-react'
+import { Play } from 'lucide-react'
 
-export default function Lyrics(){
+export default function Lyrics() {
     return (
         <div className={styles.lyrics}>
 
+            <div className='text-(--color-primary)'>[ المقطع 1 ]</div>
 
-            <div className='text-[color:var(--color-primary)]'> [ Verse 1 ]</div>
+            <p>هذا قلبي يسبّح بذكر الرحمن في كل وقتٍ وبخضوع</p>
+            <p>وفي الليل أرفع صوتي بالدعاء والابتهال إلى الكريم</p>
+            <p>قريبٌ أنت يا ربّ في كل حين وفي كل زمان يا رحيم</p>
+            <p>أنت النور الذي يهدي خطواتي في دربٍ طويلٍ مظلم</p>
 
-            <p>It might not be the right time</p>
-            <p> I might not be the right one</p>
-            <p> But there's something about us I want to say</p>
-                <Play fill='var(--color-primary)' className={styles.icon} size={10}/>
-                        <p className={styles.active}>
+            <Play fill='var(--color-primary)' className={styles.icon} size={10} />
+            <p className={styles.active}>'فِي حُبِّكَ أجدُ السَّكِينَةَ وَالطّمَأْنِينَةَ'</p>
 
-                                'Cause there's something between us anyway
-                        </p>
-            <div className='text-[color:var(--color-primary)]'> [ Verse 2 ]</div>
-            <p> I might not be the right one</p>
-            <p> It might not be the right time</p>
-            <p> But there's something about us I've got to do</p>
-            <p> Some kind of secret I will share with you</p>
+            <div className='text-(--color-primary)'>[ المقطع 2 ]</div>
 
-            <div className='text-[color:var(--color-primary)]'> [ Refrain ]</div>
-            <p> I need you more than anything in my life</p>
-            <p>I want you more than anything in my life</p>
-            <p> Some kind of secret I will share with come me</p>
+            <p>أترنم بحمدك في صباحي ومساءي وعلى طول الأيّام</p>
+            <p>قلبٌ خاشعٌ يطلب رضاك بخشوعٍ ويقينٍ دائم</p>
+            <p>يا مُعِينُ، يا مُجيبَ الدُّعاء، أقبل دعاءَ العباد</p>
+            <p>نسألُ رحمتك الواسعة أن تحيط بنا وتغمرنا بالصفا</p>
+            <p>وفي كل نبضةٍ نذكرُ فضلك ونستزيدُ من طاعتك يا رحيم</p>
+            <p>علّمنا الصبر في الشدائد وجعلنا لك خالصين مخلصين</p>
 
+            <div className='text-(--color-primary)'>[ المقطع / الجوقة ]</div>
+
+            <p>نرفع الأيادي باسمك يا رحيم بكل خشوعٍ وإجلال</p>
+            <p>تهتف الأرواح بحبٍ وإيمانٍ وبإخلاصٍ جميل</p>
+            <p>نورُ الإيمانِ في صدورنا يزداد وينير دربنا إلى الأبد</p>
+            <p>جُموعنا تتحدُ على الطاعة وعلى حبٍ يعلو فوق كل اعتبار</p>
+            <p>يا رب احفظ بلادنا وقلوبنا واجعل الخير رفيق دروبنا</p>
+            <p>بهديك نصل إلى السعادة ونلقى السلام في كل صباحٍ ومساء</p>
+
+            <div className='text-(--color-primary)'>[ المقطع 4 — نهاية ]</div>
+
+            <p>صوتُ التلاوة يملأ المكان ويطهرُ النفس من كل قسوةٍ وأسى</p>
+            <p>نختمُ الحكاية بحمدك والشكرِ على نعمٍ لا تُعد ولا تُحصى</p>
+        
 
         </div>
     )
 }
-
-

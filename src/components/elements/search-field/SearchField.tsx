@@ -22,16 +22,18 @@ export function SearchField({searchTerm, onChange }: Props) {
 
   return (
     <div>
-      <label className='flex items-center gap-3 group'>
-        <Search className='opacity-30 group-focus-within:opacity-100 duration-150'/>
+      
+      <label className='flex items-center mb-4 mt-2 gap-3 group'>
+        <Search className='opacity-30.  group-focus-within:opacity-100 duration-150'/>
         <input
           value={searchTerm}
           onChange={onChange}
           type='search'
           placeholder='Search for songs, artists, etc...'
-          className='bg-transparent w-200 outline-none'
+          className='bg-transparent w-200 h-7.5 outline-none pl-2 group-focus-within:border-primary duration-150 border rounded-lg border-transparent'
         />
       </label>
+
     </div>
   )
 }

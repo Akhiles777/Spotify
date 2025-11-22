@@ -24,11 +24,6 @@ class PlaylistStore{
     }
 
 
-
-
-
-
-
 toggleTrackInPlaylist(playlistName: string, trackName: string){
           const playlist = this.playlist.find(p => p.name === playlistName)
 

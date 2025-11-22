@@ -10,6 +10,11 @@ import { transformDuration } from '@/utils/transform-duration'
 import { favoriteStore } from '@/store/favorite-store'
 import { playerStore } from '@/store/store'
 
+
+import PlaylistBar from './Playlist-bar'
+
+
+
 // activate utc plugin so dayjs.unix(...).utc() works and utc is actually used
 dayjs.extend(utc)
 
@@ -29,17 +34,17 @@ const Track = observer(({ track }: Props) => {
       />
 
 
-       
-       {playerStore.isPlaying && playerStore.currentTrack?.name === track.name ? (
 
-<button onClick={() => playerStore.returnTrack()} >
-<X className='ml-100 opacity-30 text-primary w-8 h-8 duration-300 hover:opacity-100' />
-</button>
-
-
-       )
-      
-       : null}
+        {playerStore.currentTrack?.name === track.name && (
+          <button
+            onClick={() => {
+              playerStore.resetTrack()
+                } }
+            className='mr-8'
+          >
+            <X className='text-primary opacity-30 w-8 h-8  hover:opacity-100  duration-300' />
+          </button>
+        )}  
 
   
 
@@ -63,9 +68,11 @@ const Track = observer(({ track }: Props) => {
         </button>
 
 
+
         <button>
-          <Ellipsis className='mr-4 opacity-30 duration-300 hover:opacity-100' />
+       <PlaylistBar />
         </button>
+
       </div>
 
     </div>

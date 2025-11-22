@@ -7,6 +7,15 @@ export const ARTISTS: IArtist[] = [
         listenersCount: 1220000,
         tracks: []
     },
+
+
+ {
+        name: 'Suleyman',
+        image: '',
+        listenersCount: 13200,
+        tracks: []
+    },
+
     {
         name: 'Makhmud',
         image: '',

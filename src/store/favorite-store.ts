@@ -23,10 +23,9 @@ toggleFavorite(trackName: string){
 
     }
 
-    
+
     localStorage.setItem('favorites', JSON.stringify(this.favoritesName))
-
-
+    
     console.log(trackName)
 }
 

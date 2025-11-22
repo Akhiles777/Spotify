@@ -20,19 +20,18 @@ class MusicPlayerStore {
         this.currentTrack = track;
     }
  
-    
     togglePlayPause(){
         this.isPlaying = !this.isPlaying;
     }
 
-    returnTrack(){
-                this.isPlaying = false
-                this.progress = 0;
-                this.currentTime = 0;
-                this.trackNasheed = null;
+    resetTrack(){
+        this.isPlaying = false;
+        this.currentTrack = null;
+        this.currentTime = 0;
+        this.progress = 0;
     }
 
-
+  
     play(){
         this.isPlaying = true
     }

@@ -8,6 +8,7 @@ import { AudioPlayer } from '../elements/player/AudioPlayer.tsx';
 export default function Layout({children}: PropsWithChildren<PropsWithChildren>) {
 
     return (
+        
      <div className=''>
            <div className='min-h-screen h-full grid  grid-cols-[1fr_5fr_1.2fr] pb-20'>
 

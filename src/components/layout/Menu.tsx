@@ -4,6 +4,7 @@ import '../../App.css'
 
 import '../../index.css'
 import type { ReactNode } from "react";
+import { Link } from "lucide-react";
 
 interface Props {icon?: '', items: IMenuItem[], title?: string, children?: ReactNode }
 
@@ -26,9 +27,14 @@ export default function Menu({items,title, children}: Props) {
                 {items.map((item) => (
 <li key={item.name}>
 
-                    <a className='flex gap-3 items-center mb-5 group pointer' href={item.link ? item.link : '#'}>  {item.icon && <img className='group-hover:text-primary' src={item.icon} alt={item.name} width={24} height={24} />}
+                   <a className='flex gap-3 items-center mb-5 group pointer' href={item.link ? item.link : '#'}>  {item.icon && <img className='group-hover:text-primary' src={item.icon} alt={item.name} width={24} height={24} />}
+                  
+                  
 
-   
+
+   <Link to='/Playlist'/>
+
+
                          <span className='group-hover:text-[color:var(--color-primary)] duration-300 font-medium'>{item.name}
 
                     </span>

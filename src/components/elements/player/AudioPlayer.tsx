@@ -11,6 +11,9 @@ export const AudioPlayer = observer(() => {
 
   const {audioref, togglePlayPause,onSeek, setVolume,changeTrack} = useAudioPlayer();
 
+
+  
+
   if(!playerStore.currentTrack){
 
     return null
